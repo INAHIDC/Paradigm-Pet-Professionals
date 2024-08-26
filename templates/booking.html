@@ -1,0 +1,119 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paradigm Pet Professionals Consultation Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F4F4F4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #003B6D;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px;
+            border: 1px solid #BDBDBD;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #6699CC;
+            color: #FFFFFF;
+            border: none;
+            padding: 15px;
+            text-align: center;
+            display: block;
+            width: 100%;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #003B6D;
+        }
+
+        .message {
+            display: none;
+            text-align: center;
+            color: #003B6D;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Consultation Request Form</h2>
+        <form id="consultationForm">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="timezone">Time Zone</label>
+            <select id="timezone" name="timezone" required>
+                <option value="">Select your time zone</option>
+                <option value="PST">Pacific Standard Time (PST)</option>
+                <option value="MST">Mountain Standard Time (MST)</option>
+                <option value="CST">Central Standard Time (CST)</option>
+                <option value="EST">Eastern Standard Time (EST)</option>
+            </select>
+
+            <label for="petName">Pet's Name</label>
+            <input type="text" id="petName" name="petName" required>
+
+            <label for="petType">Pet's Type</label>
+            <input type="text" id="petType" name="petType" required>
+
+            <label for="petAge">Pet's Age</label>
+            <input type="text" id="petAge" name="petAge" required>
+
+            <input type="submit" value="Submit">
+        </form>
+
+        <div class="message" id="thankYouMessage">
+            Thank you for your submission. We will be in contact with you shortly to schedule your consultation!
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('consultationForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            document.getElementById('consultationForm').style.display = 'none';
+            document.getElementById('thankYouMessage').style.display = 'block';
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+flask_app/
+│
+├── app.py
+├── templates/
+│ ├── base.html
+│ ├── homepage.html
+│ ├── pet_care.html
+│ ├── dogs.html
+│ ├── booking.html
+│ └── about_us.html
+└── static/
+├── css/
+│ └── style.css
+└── js/
+└── script.js
