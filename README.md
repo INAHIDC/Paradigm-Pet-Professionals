@@ -1,37 +1,12 @@
 # Consultation Form Full Stack Application - C773 Final
 
-## Overview
-This project is a full-stack application where users can submit pet consultation requests. The form collects basic contact and pet information, which is saved in a MongoDB database. The app uses Node.js and Express for the back-end and HTML/CSS/JavaScript for the front-end.
+## Introduction
+This project is a full stack application where users can submit pet consultation requests. The form collects basic contact and pet information, which is saved in a MongoDB database. The app uses Node.js and Express for the back-end and HTML/CSS/JavaScript for the front end.
 
-## Tech Stack
+## Stack
 - **Front-End**: HTML, CSS, JavaScript
 - **Back-End**: Node.js, Express.js
 - **Database**: MongoDB
-
-## File Structure   
-bash
-consultation-app/
-│
-├── backend/                        # Node.js, Express
-│   ├── models/                     # Mongoose models
-│   │   └── Consultation.js         # Consultation
-│   ├── routes/                     # API 
-│   │   └── consultation.js         # Form API route
-│   ├── .env                        # Environment
-│   ├── server.js                   # server file
-│   ├── package.json                # Backend dependencies
-│
-├── frontend/                       # HTML, CSS, JS
-│   ├── public/
-│   │   ├── index.html              # HTML form page
-│   │   ├── style.css               # Styles for the form page
-│   ├── src/
-│   │   └── app.js                  # Frontend JavaScript
-│   └── package.json                # Optional for frontend build
-│
-└── README.md                       # Project (this file)
-
-bash
 
 ##To Run Project
 
@@ -78,7 +53,7 @@ json
   "petType": "Dog",
   "petAge": "3"
 }
-Contact
+Student Contact
 SM : nchow31@wgu.edu
 Professor : Dr. Cynthia 
 
