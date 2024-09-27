@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paradigm Pet Professionals Consultation Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Consultation Request Form</h2>
+        <form id="consultationForm">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="timezone">Time Zone</label>
+            <select id="timezone" name="timezone" required>
+                <option value="">Select your time zone</option>
+                <option value="PST">Pacific Standard Time (PST)</option>
+                <option value="MST">Mountain Standard Time (MST)</option>
+                <option value="CST">Central Standard Time (CST)</option>
+                <option value="EST">Eastern Standard Time (EST)</option>
+            </select>
+
+            <label for="petName">Pet's Name</label>
+            <input type="text" id="petName" name="petName" required>
+
+            <label for="petType">Pet's Type</label>
+            <input type="text" id="petType" name="petType" required>
+
+            <label for="petAge">Pet's Age</label>
+            <input type="text" id="petAge" name="petAge" required>
+
+            <input type="submit" value="Submit">
+        </form>
+
+        <div class="message" id="thankYouMessage">
+            Thank you for your submission. We will be in contact with you shortly to schedule your consultation!
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

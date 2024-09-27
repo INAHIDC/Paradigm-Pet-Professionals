@@ -1,0 +1,22 @@
+Directory 
+
+
+pet pera/
+│
+├── backend/
+│   ├── models/
+│   │   └── Consultation.js       # Mongoose schema for consultation
+│   │   └── consultation.js       # API routes 
+│   ├── .env                      # Environment 
+│   ├── server.js                 # Express server configuration
+│   ├── package.json              # Backend 
+│
+├── frontend/
+│   ├── public/
+│   │   ├── index.html            # HTML 
+│   │   ├── style.css             # Styling 
+│   ├── src/
+│   │   ├── app.js                # JS
+│   └── package.json              # Frontend dependencies
+│
+└── README.md                     # documentation
