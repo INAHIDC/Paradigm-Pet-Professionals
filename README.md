@@ -8,24 +8,28 @@ This project is a full-stack application where users can submit pet consultation
 - **Back-End**: Node.js, Express.js
 - **Database**: MongoDB
 
-## File Structure
-├── backend/
-│   ├── models/
-│   │   └── Consultation.js       # Mongoose schema for consultation
-│   │   └── consultation.js       # API routes 
-│   ├── .env                      # Environment 
-│   ├── server.js                 # Express server configuration
-│   ├── package.json              # Backend 
+## File Structure   
+bash
+consultation-app/
 │
-├── frontend/
+├── backend/                        # Node.js, Express
+│   ├── models/                     # Mongoose models
+│   │   └── Consultation.js         # Consultation
+│   ├── routes/                     # API 
+│   │   └── consultation.js         # Form API route
+│   ├── .env                        # Environment
+│   ├── server.js                   # server file
+│   ├── package.json                # Backend dependencies
+│
+├── frontend/                       # HTML, CSS, JS
 │   ├── public/
-│   │   ├── index.html            # HTML 
-│   │   ├── style.css             # Styling 
+│   │   ├── index.html              # HTML form page
+│   │   ├── style.css               # Styles for the form page
 │   ├── src/
-│   │   ├── app.js                # JS
-│   └── package.json              # Frontend dependencies
+│   │   └── app.js                  # Frontend JavaScript
+│   └── package.json                # Optional for frontend build
 │
-└── README.md                     # documentation
+└── README.md                       # Project (this file)
 
 bash
 
