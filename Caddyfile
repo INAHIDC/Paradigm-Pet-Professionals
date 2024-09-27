@@ -1,0 +1,91 @@
+{
+    email admin@paradigmpet.com
+    debug
+    admin off
+    acme_ca https://acme-v02.api.letsencrypt.org/directory
+}
+
+# Main site
+paradigmpet.com, www.paradigmpet.com {
+    reverse_proxy localhost:5000    # Proxy to the Node.js app running on port 5000
+
+    file_server /static/* {
+        root /var/www/paradigmpet/static  # Serve static files like images, CSS, and JS
+    }
+
+    header {
+        Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+        X-Content-Type-Options "nosniff"
+        X-Frame-Options "DENY"
+        X-XSS-Protection "1; mode=block"
+        Cache-Control "public, max-age=86400"
+    }
+
+    log {
+        output file /var/log/caddy/paradigmpet_access.log
+        format single_field common_log
+        level info
+    }
+
+    errors {
+        log file /var/log/caddy/paradigmpet_errors.log
+        404 /404.html      # Custom 404 page
+    }
+
+    tls admin@paradigmpet.com
+}
+
+# Subdomain for the API
+api.paradigmpet.com {
+    reverse_proxy localhost:5001     # Proxy to the API server running on port 5001
+
+    header {
+        Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+        X-Content-Type-Options "nosniff"
+        X-Frame-Options "DENY"
+    }
+
+    log {
+        output file /var/log/caddy/api_access.log
+        level info
+    }
+
+    tls admin@paradigmpet.com
+}
+
+# Serve static assets (images, CSS, etc.) from a separate subdomain
+static.paradigmpet.com {
+    root * /var/www/static       # Directory for static files (HTML, CSS, JS, images, etc.)
+    file_server                  # Enable file serving
+
+    log {
+        output file /var/log/caddy/static_access.log
+        level info
+    }
+
+    tls admin@paradigmpet.com
+}
+
+# Subdomain
+dashboard.paradigmpet.com {
+    reverse_proxy localhost:5002  # Proxy to the dashboard app running on port 5002
+
+    header {
+        Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+        X-Content-Type-Options "nosniff"
+        X-Frame-Options "DENY"
+        Authorization "Bearer YOUR_TOKEN_HERE"  # Sample Bearer Token (adjust for real usage)
+    }
+
+    log {
+        output file /var/log/caddy/dashboard_access.log
+        level info
+    }
+
+    tls admin@paradigmpet.com
+}
+
+# Global
+old-paradigmpet.com {
+    redir https://paradigmpet.com{uri} 301   # Redirect old domain to new domain with 301 redirect
+}
